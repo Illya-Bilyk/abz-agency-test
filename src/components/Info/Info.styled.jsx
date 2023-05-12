@@ -1,0 +1,68 @@
+import { styled } from 'styled-components';
+import media from 'media/media';
+import BgUhd from '../../images/bg/BgUhd.png';
+import BgDesktop from '../../images/bg/BgDesktop.png';
+import BgTablet from '../../images/bg/BgTablet.png';
+import BgMobile from '../../images/bg/BgMobile.png';
+
+export const InfoWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 360px;
+  margin-bottom: 140px;
+
+  background-image: url(${BgMobile});
+
+  ${media.tablet`
+  background-image: url(${BgTablet});
+  width: 768px;
+ 
+  `};
+  ${media.desktop`
+  background-image: url(${BgDesktop});
+  width: 1024px;
+    height: 650px;
+  `};
+  ${media.uhd`
+  background-image: url(${BgUhd} );
+    height: 650px;
+  width: 1170px;
+  `};
+`;
+
+export const Title = styled.h2`
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #ffffff;
+  width: 328px;
+  margin: 0 auto;
+  margin-bottom: 21px;
+
+  ${media.tablet`
+     width: 380px;
+  `};
+`;
+
+export const Text = styled.p`
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+  color: #ffffff;
+  width: 328px;
+  margin: 0 auto;
+  margin-bottom: 32px;
+
+  ${media.tablet`
+     width: 380px;
+  `};
+`;
