@@ -12,7 +12,7 @@ export const AppBar = () => {
         </div>
         <div>
           {buttons.map(value => (
-            <MainButton key={value} value={value} />
+            <MainButton key={value} value={value} type="button" />
           ))}
         </div>
       </HeadWrapper>

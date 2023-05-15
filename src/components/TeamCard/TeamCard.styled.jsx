@@ -60,15 +60,9 @@ export const Img = styled.img`
 `;
 
 export const CardText = styled.p`
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 26px;
+  ${p => p.theme.textStyles.text};
   text-align: center;
-  color: rgba(0, 0, 0, 0.87);
   margin: 0 auto;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

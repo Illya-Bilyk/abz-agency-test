@@ -7,36 +7,8 @@ export const FormWrapper = styled(Form)`
   align-items: flex-start;
 `;
 
-export const Span = styled.span`
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  color: #7e7e7e;
-  display: flex;
-  flex-direction: column;
-  padding: 4px 0 0 16px;
-`;
-
-export const Input = styled(Field)`
-  background: #f8f8f8;
-  border: 1px solid #d0cfcf;
-  border-radius: 4px;
-  width: 296px;
-  height: 26px;
-  margin-top: 50px;
-  padding: 14px 16px;
-`;
-
 export const RadioGroup = styled.div`
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 26px;
-  color: rgba(0, 0, 0, 0.87);
-
+  ${p => p.theme.textStyles.text};
   display: flex;
   flex-direction: column;
   margin-top: 25px;
@@ -63,4 +35,29 @@ export const Label = styled.label`
   &: checked + ${Radio} {
     border: 1px solid #00bdd3;
   }
+`;
+
+export const PhotoLabel = styled.button`
+  background: #f8f8f8;
+  border: 1px solid #d0cfcf;
+  border-radius: 4px;
+  width: 328px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+`;
+
+export const PhotoBtn = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.87);
+  width: 83px;
+  height: 52px;
+  background: #f8f8f8;
+  border: 1px solid rgba(0, 0, 0, 0.87);
+  border-radius: 4px 0px 0px 4px;
+  margin-right: 16px;
 `;

@@ -34,11 +34,7 @@ export const InfoWrap = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 40px;
+  ${p => p.theme.textStyles.heading1};
   text-align: center;
   color: #ffffff;
   width: 328px;
@@ -51,11 +47,7 @@ export const Title = styled.h2`
 `;
 
 export const Text = styled.p`
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 26px;
+  ${p => p.theme.textStyles.text};
   text-align: center;
   color: #ffffff;
   width: 328px;

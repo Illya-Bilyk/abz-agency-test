@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-export const TeamWraper = styled.div`
+export const TeamWraper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,14 +8,9 @@ export const TeamWraper = styled.div`
 `;
 
 export const TeamTitle = styled.h2`
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 40px;
+  ${p => p.theme.textStyles.heading1};
+  text-align: center;
   display: flex;
   align-items: flex-end;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.87);
   margin-bottom: 50px;
 `;
