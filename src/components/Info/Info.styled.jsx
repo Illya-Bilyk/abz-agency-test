@@ -5,7 +5,7 @@ import BgDesktop from '../../images/bg/BgDesktop.png';
 import BgTablet from '../../images/bg/BgTablet.png';
 import BgMobile from '../../images/bg/BgMobile.png';
 
-export const InfoWrap = styled.div`
+export const InfoWrap = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;

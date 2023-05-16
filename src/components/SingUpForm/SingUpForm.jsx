@@ -6,6 +6,8 @@ import {
   Label,
   PhotoLabel,
   PhotoBtn,
+  RadioBtn,
+  RadioBtnChecked,
 } from './SingUpForm.styled';
 import { Inputs } from './Inputs/Inputs';
 import { Btn } from 'buttons/MainBtn.styled';
@@ -15,7 +17,7 @@ import { validationSchema } from 'utilities/Validation';
 import { ErrorText } from './Inputs/Inputs.styled';
 import { useEffect, useState } from 'react';
 
-export const SingUpForm = ({ ids, handleNewUser }) => {
+export const SingUpForm = ({ ids, handleNewUser, onSubmit }) => {
   const [user, setUser] = useState({});
 
   const initialValues = {
@@ -75,7 +77,7 @@ export const SingUpForm = ({ ids, handleNewUser }) => {
         validationSchema={validationSchema}
         errors
       >
-        {({ errors, touched }) => (
+        {({ errors, touched, values }) => (
           <FormWrapper>
             <Inputs errors={errors} touched={touched} />
             {/* Radio  */}
@@ -84,7 +86,22 @@ export const SingUpForm = ({ ids, handleNewUser }) => {
               {ids.map(({ id, name }) => {
                 return (
                   <Label key={id}>
-                    <Radio type="radio" name="picked" id={id} value={name} />
+                    <RadioBtn
+                      checked={
+                        values.picked !== name
+                          ? '1px solid #d0cfcf'
+                          : '1px solid #00BDD3'
+                      }
+                    >
+                      {values.picked === name && <RadioBtnChecked />}
+                    </RadioBtn>
+                    <Radio
+                      type="radio"
+                      name="picked"
+                      id={id}
+                      value={name}
+                      style={{ display: 'none' }}
+                    />
                     {name}
                   </Label>
                 );
@@ -116,6 +133,9 @@ export const SingUpForm = ({ ids, handleNewUser }) => {
             <Btn
               type="submit"
               style={{ marginLeft: '100px', marginTop: '50px' }}
+              onClick={() => {
+                onSubmit('users');
+              }}
             >
               Sing up
             </Btn>

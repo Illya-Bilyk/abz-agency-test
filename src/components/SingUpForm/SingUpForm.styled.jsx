@@ -32,9 +32,27 @@ export const Label = styled.label`
   align-items: center;
   margin: 13px 0 0 0;
 
-  &: checked + ${Radio} {
+  &: checked {
     border: 1px solid #00bdd3;
   }
+`;
+export const RadioBtn = styled.span`
+  box-sizing: border-box;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: ${p => p.checked};
+  margin-right: 12px;
+`;
+
+export const RadioBtnChecked = styled.span`
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background: #00bdd3;
+  margin: 4px;
 `;
 
 export const PhotoLabel = styled.button`

@@ -1,12 +1,13 @@
-import * as API from 'services/api';
-import { useEffect, useState } from 'react';
 import { TeamWraper, TeamTitle } from './Team.styled';
 import TeamCard from 'components/TeamCard';
 import MainButton from 'buttons';
+import { useRef } from 'react';
 
-export const Team = ({ showMoreBtn, users, totalCheck }) => {
+export const Team = ({ showMoreBtn, users, totalCheck, handleRef }) => {
+  const usersRef = useRef();
+  if (usersRef.current) handleRef(usersRef.current.id, usersRef);
   return (
-    <TeamWraper>
+    <TeamWraper ref={usersRef} id="users">
       <TeamTitle>Working with GET request</TeamTitle>
       {users && <TeamCard users={users} />}
       {totalCheck && (

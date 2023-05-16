@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-export const SingUpWrapper = styled.div`
+export const SingUpWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;

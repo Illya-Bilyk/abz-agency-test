@@ -1,10 +1,10 @@
 import { InfoWrap, Title, Text } from './Info.styled';
 import MainButton from 'buttons';
 
-export const Info = () => {
+export const Info = ({ handleClick }) => {
   return (
     <>
-      <InfoWrap>
+      <InfoWrap id="info">
         <Title>Test assignment for front-end developer</Title>
         <Text>
           What defines a good front-end developer is one that has skilled
@@ -13,7 +13,12 @@ export const Info = () => {
           mind. They should also be excited to learn, as the world of Front-End
           Development keeps evolving
         </Text>
-        <MainButton type="button" value="Sing up" />
+        <MainButton
+          type="button"
+          value="Sing up"
+          onBtn={handleClick}
+          id="singup"
+        />
       </InfoWrap>
     </>
   );

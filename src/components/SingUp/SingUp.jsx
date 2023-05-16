@@ -1,12 +1,14 @@
 import { SingUpWrapper, SingUpTitle } from './SingUp.styled';
 import SingUpForm from 'components/SingUpForm';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import * as API from 'services/api';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export const SingUp = ({ newCountValue }) => {
+export const SingUp = ({ newCountValue, handleRef, onSubmit }) => {
   const [ids, setIds] = useState([]);
+  const singUpRef = useRef();
+  if (singUpRef.current) handleRef(singUpRef.current.id, singUpRef);
 
   const fetchId = async () => {
     try {
@@ -38,10 +40,11 @@ export const SingUp = ({ newCountValue }) => {
     await postNewUser(user);
     newCountValue(6);
   };
+
   return (
-    <SingUpWrapper>
+    <SingUpWrapper ref={singUpRef} id="singup">
       <SingUpTitle>Working with POST request</SingUpTitle>
-      <SingUpForm ids={ids} handleNewUser={handleNewUser} />
+      <SingUpForm ids={ids} handleNewUser={handleNewUser} onSubmit={onSubmit} />
       <ToastContainer
         position="top-right"
         autoClose={1500}
