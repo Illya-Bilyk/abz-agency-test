@@ -45,7 +45,6 @@ export const SingUpForm = ({ ids, handleNewUser, onSubmit }) => {
       photo: event.currentTarget.files[0],
     };
     setUser(user => ({ ...user, ...updatedValue }));
-    form.reset();
   };
 
   const handleSubmit = (values, { resetForm }) => {
